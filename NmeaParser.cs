@@ -159,26 +159,45 @@ namespace NMEADecoder
             return data;
         }
 
-        private static NmeaData ParseGsa(string[] parts)
-        {
-            var data = new NmeaData();
+private static NmeaData ParseGsa(string[] parts)
+{
+    var data = new NmeaData();
 
-            if (parts[15] != "")
-            {
-                data.PDOP = double.Parse(parts[15], NmeaCultureInfo);
-            }
-            if (parts[16] != "")
-            {
-                data.HDOP = double.Parse(parts[16], NmeaCultureInfo);
-            }
-            if (parts[17] != "")
-            {
-                data.VDOP = double.Parse(parts[17], NmeaCultureInfo);
-            }
+    // Check for the necessary length to avoid IndexOutOfRangeException
+    if (parts.Length >= 18)
+    {
+        // Safely parse PDOP, HDOP, VDOP
+        data.PDOP = TryParseDouble(parts[15]);
+        data.HDOP = TryParseDouble(parts[16]);
+        data.VDOP = TryParseDouble(parts[17]);
+    }
 
-            return data;
-        }
+    // Optionally, parse additional data if available
+    if (parts.Length >= 20) 
+    {
+        data.SystemId = TryParseInt(parts[19]); // System ID parsing, considering it's optional
+    }
 
+    return data;
+}
+
+private static double TryParseDouble(string value)
+{
+    if (double.TryParse(value, NumberStyles.Any, NmeaCultureInfo, out double result))
+    {
+        return result;
+    }
+    return 0; // Default value if parsing fails
+}
+
+private static int TryParseInt(string value)
+{
+    if (int.TryParse(value, out int result))
+    {
+        return result;
+    }
+    return 0; // Default value if parsing fails
+}
         private static DateTime ParseTime(string time)
         {
             if (time.Length < 6)

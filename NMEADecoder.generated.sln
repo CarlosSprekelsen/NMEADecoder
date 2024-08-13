@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMEADecoder", "NMEADecoder.csproj", "{33A4DA7B-2ED4-412C-ADB0-3C65C627EFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMEADecoder", "NMEADecoder.csproj", "{47792042-BA80-4314-AAA0-9C0FFCBCB725}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33A4DA7B-2ED4-412C-ADB0-3C65C627EFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33A4DA7B-2ED4-412C-ADB0-3C65C627EFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33A4DA7B-2ED4-412C-ADB0-3C65C627EFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33A4DA7B-2ED4-412C-ADB0-3C65C627EFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47792042-BA80-4314-AAA0-9C0FFCBCB725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47792042-BA80-4314-AAA0-9C0FFCBCB725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47792042-BA80-4314-AAA0-9C0FFCBCB725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47792042-BA80-4314-AAA0-9C0FFCBCB725}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {69F7104C-5827-46E4-80C7-0173F6C10781}
+		SolutionGuid = {14F12CAD-4E38-4A70-975D-5F5BF1D19A09}
 	EndGlobalSection
 EndGlobal

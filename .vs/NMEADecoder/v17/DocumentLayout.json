@@ -71,8 +71,7 @@
               "RelativeToolTip": "SerialPortReader.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T09:01:51.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T09:01:51.101Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "FilePortReader.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T08:59:08.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T08:59:08.103Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T08:32:22.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T08:32:22.304Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "NmeaGui.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T08:31:51.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T08:31:51.935Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "sample_nmea_data.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-08-13T08:23:28.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T08:23:28.479Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "NmeaParser.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAwwDAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T08:20:14.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T08:20:14.624Z"
             },
             {
               "$type": "Document",
@@ -149,8 +143,7 @@
               "RelativeToolTip": "NmeaData.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T08:19:46.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T08:19:46.497Z"
             }
           ]
         }
