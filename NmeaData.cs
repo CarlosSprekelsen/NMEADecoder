@@ -12,6 +12,7 @@ namespace NMEADecoder
         public double Course { get; set; }
         public string Mode { get; set; }
         public int SatellitePRN { get; set; }
+        public string Constellation { get; set; }
         public int Azimuth { get; set; }
         public int Elevation { get; set; }
         public int SNR { get; set; }

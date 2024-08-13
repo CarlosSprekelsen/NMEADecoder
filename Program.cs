@@ -1,27 +1,33 @@
 using System;
 using System.Threading.Tasks;
+using System.Windows.Forms; // Make sure to add this for GUI components
 
 namespace NMEADecoder
 {
-    class Program
+    static class Program
     {
+        [STAThread] // Required for Windows Forms applications
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
 #if USE_FILE_READER
-        static async Task Main(string[] args)
-        {
+            // Use file reader
             string filePath = "sample_nmea_data.txt";
-            var reader = new FilePortReader(filePath);
-            await reader.ReadFileAsync();
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
-        }
+            IReader reader = new FilePortReader(filePath);
+            var form = new NmeaGui(reader);
+            reader.StartReading(); 
+            form.FormClosing += (sender, e) => reader.StopReading();
+            Application.Run(form);
 #else
-        static void Main(string[] args)
-        {
-            var reader = new SerialPortReader("COM3", 4800);
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
-            reader.Close();
-        }
+            // Use serial port reader
+            Reader reader = new SerialPortReader("COM3", 9600); 
+            var form = new NmeaGui(reader); // Pass reader to the form
+            reader.StartReading(); // Start reading
+            form.FormClosing += (sender, e) => reader.StopReading(); // Ensure the port is closed when the form closes
+            Application.Run(form);
 #endif
+        }
     }
 }

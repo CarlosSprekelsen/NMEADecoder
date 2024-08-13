@@ -13,27 +13,43 @@ namespace NMEADecoder
             if (string.IsNullOrWhiteSpace(sentence))
                 throw new ArgumentException("NMEA sentence is null or empty.");
 
+            // Extract the constellation prefix
+            string prefix = sentence.Length > 3 ? sentence.Substring(1, 2) : string.Empty;
+
             if (!IsValid(sentence))
                 return null;
 
+            // Add a property in NmeaData for Constellation
             string[] parts = GetWords(sentence);
+            NmeaData data = null;
 
             switch (parts[0])
             {
                 case "$GPGGA":
-                    return ParseGga(parts);
+                case "$GNGGA":
+                    data = ParseGga(parts);
+                    break;
                 case "$GPRMC":
-                    return ParseRmc(parts);
+                case "$GNRMC":
+                    data = ParseRmc(parts);
+                    break;
                 case "$GPGSV":
-                    return ParseGpgsv(parts);
+                case "$GNGSV":
+                    data = ParseGsv(parts);
+                    break;
                 case "$GPGSA":
-                    return ParseGpgsa(parts);
+                case "$GNGSA":
+                    data = ParseGsa(parts);
+                    break;
                 default:
-                    throw new NotSupportedException(
-                        $"NMEA sentence type {parts[0]} is not supported."
-                    );
+                    throw new NotSupportedException($"NMEA sentence type {parts[0]} is not supported.");
             }
+
+            // Set the constellation based on prefix
+            data.Constellation = prefix;
+            return data;
         }
+
 
         private static string[] GetWords(string sentence)
         {
@@ -106,7 +122,7 @@ namespace NMEADecoder
             return data;
         }
 
-        private static NmeaData ParseGpgsv(string[] parts)
+        private static NmeaData ParseGsv(string[] parts)
         {
             var data = new NmeaData();
 
@@ -143,7 +159,7 @@ namespace NMEADecoder
             return data;
         }
 
-        private static NmeaData ParseGpgsa(string[] parts)
+        private static NmeaData ParseGsa(string[] parts)
         {
             var data = new NmeaData();
 

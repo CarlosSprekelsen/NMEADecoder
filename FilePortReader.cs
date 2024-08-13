@@ -4,13 +4,24 @@ using System.Threading.Tasks;
 
 namespace NMEADecoder
 {
-    public class FilePortReader
+    public class FilePortReader : IReader
     {
         private readonly string _filePath;
+        public event Action<NmeaData> DataReceived;
 
         public FilePortReader(string filePath)
         {
             _filePath = filePath;
+        }
+
+        public void StartReading()
+        {
+            Task.Run(() => ReadFileAsync());
+        }
+
+        public void StopReading()
+        {
+            // Implement logic to stop reading if necessary, e.g., by controlling a cancellation token
         }
 
         public async Task ReadFileAsync()
